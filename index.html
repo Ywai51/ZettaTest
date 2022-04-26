@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Social Media Post UI Design</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+	@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
+	background: #f1eee9;
+	font-family: "Roboto", sans-serif;
+}
+
+.main-content {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.post-block {
+	background: #fff;
+	padding: 25px;
+	margin-bottom: 25px;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s;
+}
+.post-block img.author-img {
+	height: 45px;
+	width: 45px;
+	border-radius: 45px;
+}
+.post-block img.author-img.author-img--small {
+	height: 30px;
+	width: 30px;
+}
+.post-block__content img,
+.post-block__content video,
+.post-block__content audio {
+	max-width: 100%;
+	border-radius: 5px;
+}
+.post-block .comment-view-box__comment {
+	border-radius: 5px;
+	background: #f5f5f5;
+	padding: 15px;
+}
+
+</style>
+<body>
+	<section class="main-content">
+		<div class="container">
+			<h1 class="text-center text-uppercase">Social Media Post</h1>
+			<br>
+			<br>
+
+			<div class="row">
+				<div class="col-sm-6 offset-sm-3">
+					<div class="post-block">
+						<div class="d-flex justify-content-between">
+							<div class="d-flex mb-3">
+								<div class="mr-2">
+									<a href="#!" class="text-dark"><img src="https://picsum.photos/30" alt="User" class="author-img"></a>
+								</div>
+								<div>
+									<h5 class="mb-0"><a href="#!" class="text-dark">Kiran Acharya</a></h5>
+									<p class="mb-0 text-muted">5m</p>
+								</div>
+							</div>
+							<div class="post-block__user-options">
+								<a href="#!" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+											<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
+									<a class="dropdown-item text-dark" href="#!"><i class="fa fa-pencil mr-1"></i>Edit</a>
+									<a class="dropdown-item text-danger" href="#!"><i class="fa fa-trash mr-1"></i>Delete</a>
+								</div>
+							</div>
+						</div>
+						<div class="post-block__content mb-2">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione laboriosam non atque, porro cupiditate commodi? Provident culpa vel sit enim!</p>
+							<img src="https://picsum.photos/300" alt="Content img">
+						</div>
+						<div class="mb-3">
+							<div class="d-flex justify-content-between mb-2">
+								<div class="d-flex">
+									<a href="#!" class="text-danger mr-2"><span><i class="fa fa-heart"></i></span></a>
+									<a href="#!" class="text-dark mr-2"><span>Comment</span></a>
+								</div>
+								<a href="#!" class="text-dark"><span>Share</span></a>
+							</div>
+							<p class="mb-0">Liked by <a href="#!" class="text-muted font-weight-bold">Asep Sui</a> & <a href="#!" class="text-muted font-weight-bold">25 others</a></p>
+						</div>
+						<hr>
+						<div class="post-block__comments">
+							
+							<!-- Comment content -->
+							<div class="comment-view-box mb-3">
+								<div class="d-flex mb-2">
+									<img src="https://picsum.photos/25" alt="User img" class="author-img author-img--small mr-2">
+									<div>
+										<h6 class="mb-1"><a href="#!" class="text-dark">Asep Sui</a> <small class="text-muted">1m</small></h6>
+										<p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										<div class="d-flex">
+											<a href="#!" class="text-dark mr-2"><span><i class="fa fa-heart-o"></i></span></a>
+											<a href="#!" class="text-dark mr-2"><span>Reply</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Comment Input -->
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" placeholder="Add your comment">
+								<div class="input-group-append">
+								  	<button class="btn btn-primary" type="button" id="button-addon2"><i class="fa fa-paper-plane"></i></button>
+								</div>
+							</div>
+							<!-- More Comments -->
+							<hr>
+							<a href="#!" class="text-dark">View More comments <span class="font-weight-bold">(12)</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type = "text/javascript">
+		//JS test >>>>OPEN CONSOLE LOG<<<
+		const input = [8, 7, 7, 9, 5, 4, 2, 9];
+
+		function result(input) {
+			input = input.sort();
+			const len = input.length;
+			const mid = Math.ceil(len / 2);
+			const inputMed = len % 2 == 0 ? (input[mid] + input[mid - 1]) / 2 : input[mid - 1];
+			console.log(inputMed);
+		}
+		result(input);
+	</script>
+</body>
+</html>
